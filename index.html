@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linhas BH</title>
+    <meta name="description"
+        content="Horários metrô e ônibus Belo Horizonte em tempo real. Planeje sua viagem com praticidade!">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="/js/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Linhas BH</h1>
+        <p>Horários e trânsito em tempo real</p>
+    </header>
+
+    <nav>
+        <a onclick="mostrarEscolhaEstacao()"><i class="fa-solid fa-subway"></i> Metrô</a>
+        <a onclick="carregarPagina('https://bus2.info/2you/#/4ch6j')"><i class="fa-solid fa-bus"></i> Ônibus</a>
+        <a onclick="carregarPagina('https://embed.waze.com/iframe?zoom=14&lat=-19.919433&lon=-43.940667&ct=livemap')">
+            <i class="fa-solid fa-car"></i> Trânsito
+        </a>
+        <span id="weather"><i class="fa-solid fa-cloud-sun"></i> Carregando previsão...</span>
+    </nav>
+
+    <div id="estacao-container">
+        <select id="estacao-select" onchange="escolherEstacao()">
+            <option value="">Escolha uma estação</option>
+        </select>
+    </div>
+
+    <div id="iframe-container">
+        <iframe id="iframe" src=""></iframe>
+    </div>
+</body>
+
+</html>
